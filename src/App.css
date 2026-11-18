@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+/* Same teal theme as my Web Programming portfolio */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0fdfa;
+  color: #23413e;
+  line-height: 1.6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.app-header {
+  background: #0f766e;
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.app-header h1 {
+  margin: 12px 0 6px;
+  font-size: 2.2rem;
+}
+
+.app-header p {
+  margin: 0;
+  color: #ccfbf1;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #ccfbf1;
+  color: #134e4a;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+main {
+  width: 92%;
+  max-width: 1100px;
+  margin: 35px auto;
+  flex: 1;
+}
+
+/* FilterBar */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter {
+  padding: 10px 20px;
+  border: 2px solid #0f766e;
+  border-radius: 999px;
+  background: white;
+  color: #0f766e;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter:hover {
+  background: #ccfbf1;
+}
+
+.filter.active {
+  background: #0f766e;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.count {
+  color: #4b5f5c;
+  margin: 18px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ProjectList */
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ProjectCard */
+
+.project-card {
+  background: white;
+  border-top: 5px solid #0f766e;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h2 {
+  margin: 0 0 8px;
+  color: #134e4a;
+}
+
+.description {
+  margin: 0 0 16px;
+  color: #4b5f5c;
+  flex: 1;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: #ccfbf1;
+  color: #134e4a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-links a {
+  padding: 9px 16px;
+  border: 2px solid #0f766e;
+  border-radius: 9px;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-links a:hover {
+  background: #f0fdfa;
+}
+
+.card-links a.primary {
+  background: #0f766e;
+  color: white;
+}
+
+.card-links a.primary:hover {
+  background: #134e4a;
+}
+
+.no-demo {
+  color: #4b5f5c;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: #4b5f5c;
+}
+
+/* Keyboard focus */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #eab308;
+  outline-offset: 3px;
+}
+
+.app-footer {
+  background: #134e4a;
+  color: white;
+  text-align: center;
+  padding: 24px;
 }

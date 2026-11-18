@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("shows all projects, then filters by technology", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // All 5 projects show at the start
+  expect(screen.getAllByRole("article")).toHaveLength(5);
+
+  // Clicking "Node" shows only FairShare
+  fireEvent.click(screen.getByRole("button", { name: "Node" }));
+  expect(screen.getAllByRole("article")).toHaveLength(1);
+  expect(screen.getByText("FairShare")).toBeInTheDocument();
 });

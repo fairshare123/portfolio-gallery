@@ -9,7 +9,7 @@ const projects = [
       "A group expense-splitting app. Create groups, split costs equally or by amount, percentage or shares, see who owes whom, and record settlements.",
     tech: ["React", "Node", "MongoDB", "CSS"],
     github: "https://github.com/fairshare123/FairShare",
-    demo: null, // not deployed yet
+        demo: "https://fairshare123.github.io/portfolio-gallery/",
   },
   {
     id: 2,

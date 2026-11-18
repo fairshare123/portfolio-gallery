@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 // Turns an array of projects into a grid of ProjectCards.
 // .map() creates one ProjectCard for each project in the array.
 
-function ProjectList({ projects }) {
+function ProjectList({ projects, savedIds, onToggleSave }) {
   if (projects.length === 0) {
     return <p className="empty">No projects use this technology yet.</p>;
   }
@@ -18,6 +18,8 @@ function ProjectList({ projects }) {
           tech={project.tech}
           github={project.github}
           demo={project.demo}
+          isSaved={savedIds.includes(project.id)}
+          onToggleSave={() => onToggleSave(project.id)}
         />
       ))}
     </section>

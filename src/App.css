@@ -216,6 +216,35 @@ main {
   color: var(--heading);
 }
 
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.save-button {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  border-color: var(--accent);
+}
+
+.save-button.saved {
+  background: var(--chip);
+  color: #e11d48;
+}
+
 .description {
   margin: 0 0 16px;
   color: var(--muted);

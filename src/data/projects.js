@@ -9,7 +9,7 @@ const projects = [
       "A group expense-splitting app. Create groups, split costs equally or by amount, percentage or shares, see who owes whom, and record settlements.",
     tech: ["React", "Node", "MongoDB", "CSS"],
     github: "https://github.com/fairshare123/FairShare",
-        demo: "https://fairshare123.github.io/portfolio-gallery/",
+    demo: null, // not deployed yet
   },
   {
     id: 2,
@@ -45,7 +45,16 @@ const projects = [
       "This Week 10 React app. It is built from ProjectCard, ProjectList and FilterBar components, and filters my projects by technology.",
     tech: ["React", "CSS"],
     github: "https://github.com/fairshare123/portfolio-gallery",
-    demo: null, // not deployed yet
+    demo: "https://fairshare123.github.io/portfolio-gallery/",
+  },
+  {
+    id: 6,
+    title: "Campus Corner Shop",
+    description:
+      "Week 11 React shopping cart. Add products, change quantities with + and -, and watch the total update. The cart is stored in React state.",
+    tech: ["React", "CSS"],
+    github: "https://github.com/fairshare123/shopping-cart",
+    demo: "https://fairshare123.github.io/shopping-cart/",
   },
 ];
 

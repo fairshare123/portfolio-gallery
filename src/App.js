@@ -25,6 +25,15 @@ function App() {
   // Remembers which filter button is selected. Starts with "All".
   const [selected, setSelected] = useState("All");
 
+  // Remembers which projects I saved with the heart button (an array of ids).
+  const [savedIds, setSavedIds] = useState([]);
+
+  function toggleSave(id) {
+    setSavedIds((ids) =>
+      ids.includes(id) ? ids.filter((savedId) => savedId !== id) : [...ids, id]
+    );
+  }
+
   // Remembers light or dark mode.
   const [theme, setTheme] = useState(getStartingTheme);
 
@@ -65,10 +74,14 @@ function App() {
           <FilterBar filters={filters} selected={selected} onSelect={setSelected} />
 
           <p className="count" aria-live="polite">
-            Showing {visibleProjects.length} of {projects.length} projects
+            Showing {visibleProjects.length} of {projects.length} projects · ♥ {savedIds.length} saved
           </p>
 
-          <ProjectList projects={visibleProjects} />
+          <ProjectList
+            projects={visibleProjects}
+            savedIds={savedIds}
+            onToggleSave={toggleSave}
+          />
         </section>
       </main>
 

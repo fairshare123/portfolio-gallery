@@ -1,10 +1,22 @@
 // Shows ONE project: title, description, tech stack, GitHub link and demo link.
 // It receives the project's details as props from ProjectList.
+// The heart button saves or unsaves the project (the saved list is state in App).
 
-function ProjectCard({ title, description, tech, github, demo }) {
+function ProjectCard({ title, description, tech, github, demo, isSaved, onToggleSave }) {
   return (
     <article className="project-card">
-      <h2>{title}</h2>
+      <div className="card-top">
+        <h2>{title}</h2>
+        <button
+          type="button"
+          className={isSaved ? "save-button saved" : "save-button"}
+          aria-pressed={isSaved}
+          aria-label={isSaved ? `Unsave ${title}` : `Save ${title}`}
+          onClick={onToggleSave}
+        >
+          {isSaved ? "♥" : "♡"}
+        </button>
+      </div>
       <p className="description">{description}</p>
 
       <ul className="tech-list" aria-label="Tech stack">
